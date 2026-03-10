@@ -134,7 +134,7 @@ Clone the repo:
 bash
 Copy
 Edit
-git clone https://github.com/YOUR_USERNAME/heart-disease-prediction.git
+git clone https://github.com/YasaNafees/heart-disease-prediction.git
 Install required libraries:
 
 bash
