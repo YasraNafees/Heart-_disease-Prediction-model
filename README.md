@@ -1,156 +1,78 @@
-💓 Heart Disease Prediction using Machine Learning
+# 💓 Heart Disease Prediction using Machine Learning
 
-A Data Science project to predict the likelihood of heart disease using patient health data. 
-This project involves EDA, data visualization, feature engineering, 
-classification modeling, and model evaluation using Python.
+A machine learning project to predict heart disease likelihood using patient 
+health data — includes EDA, feature engineering, classification modeling, 
+and evaluation.
 
-📁 Table of Contents
-Project Overview
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-orange)
+![Accuracy](https://img.shields.io/badge/Accuracy-89.7%25-green)
 
+---
 
-Dataset
+## 📌 Overview
 
+Predicts whether a patient has heart disease using health indicators from the 
+UCI Heart Disease Dataset (303 records). Built to assist in early diagnosis 
+through ML.
 
-Exploratory Data Analysis (EDA)
+---
 
-Data Preprocessing
+## 📊 Dataset
 
-Modeling
+| Property | Detail |
+|----------|--------|
+| Source | UCI Heart Disease Dataset |
+| Records | 303 |
+| Target | `num` — 0 = No Disease, 1 = Disease |
 
-Evaluation Metrics
+---
 
-Feature Importance
+## 🔍 EDA Highlights
 
-Technologies Used
+- Gender & Chest Pain Type vs Heart Disease
+- Age Distribution (Histogram + Boxplot)
+- Correlation Heatmap
+- ST Depression vs Target (Violin Plot)
 
-How to Run
+---
 
-Results
+## 🤖 Model
 
-License
+**Random Forest Classifier** (`n_estimators=100`)
 
-📌 Project Overview
+| Metric | Score |
+|--------|-------|
+| Accuracy | **89.7%** |
+| F1-Score | 0.90 |
+| ROC-AUC | ✅ Evaluated |
 
-This project predicts whether a patient has heart disease using various health indicators.
-It aims to assist healthcare professionals in early diagnosis and decision-making through the power of Machine Learning.
+---
 
-📊 Dataset
+## 🔦 Top Features
 
-Source: UCI Heart Disease Dataset
+1. `cp` — Chest pain type
+2. `thalach` — Max heart rate
+3. `oldpeak` — ST depression
+4. `ca` — Major vessels
+5. `slope`
 
-Total Records: 303
+---
 
-Target Variable: num (0 = no heart disease, 1 = heart disease)
+## 🛠 Tech Stack
 
-🔍 Exploratory Data Analysis (EDA)
+`Python` `Pandas` `NumPy` `Scikit-learn` `Seaborn` `Matplotlib` `Joblib`
 
-Visualizations created with Matplotlib and Seaborn:
+---
 
-Gender vs Heart Disease (Grouped Bar Chart)
-
-Chest Pain Type vs Heart Disease
-
-Age Distribution (Histogram, Boxplot)
-
-Correlation Heatmap
-
-Heart Rate (thalach) vs Heart Disease (Boxplot)
-
-Resting BP (trestbps) vs Heart Disease
-
-ST Depression (oldpeak) vs Target (Violin Plot)
-
-🧹 Data Preprocessing
-Handled categorical columns via One-Hot Encoding
-
-Converted binary categorical variables to integers
-
-Removed non-numeric columns
-
-Split data into train/test sets
-
-🤖 Modeling
-
-RandomForestClassifier
-
-n_estimators = 100, random_state = 42
-
-Trained and evaluated using:
-
-accuracy_score
-
-classification_report
-
-confusion_matrix
-
-ROC-AUC Score
-
-📈 Evaluation Metrics
-
-text
-Copy
-Edit
-Accuracy: 89.7%
-Precision (Class 0): 0.86
-Recall (Class 0): 0.89
-Precision (Class 1): 0.92
-Recall (Class 1): 0.90
-F1-Score (Overall): 0.90
-🔦 Feature Importance
-
-Top features contributing to predictions:
-
-cp (Chest pain type)
-
-thalach (Maximum heart rate)
-
-oldpeak (ST depression)
-
-ca (Major vessels)
-
-slope
-
-Visualized using a horizontal bar plot.
-
-🛠 Technologies Used
-
-Python 3
-
-Pandas
-
-NumPy
-
-Seaborn
-
-Matplotlib
-
-Scikit-learn
-
-Joblib
-
-▶️ How to Run
-Clone the repo:
-
-bash
-Copy
-Edit
-git clone https://github.com/YasaNafees/heart-disease-prediction.git
-Install required libraries:
-
-bash
-Copy
-Edit
+## ▶️ How to Run
+```bash
+git clone https://github.com/YasraNafees/Heart-_disease-Prediction-model.git
 pip install -r requirements.txt
-Run the notebook:
-
-bash
-Copy
-Edit
 jupyter notebook Heart_Disease_Prediction.ipynb
-✅ Results
-The model performed well on the test data with nearly 90% accuracy, 
-making it a potential tool for early screening of heart-related issues.
+```
 
-📄 License
-This project is open-source and available under the MIT License.
+---
 
+## 📄 License
+MIT License
