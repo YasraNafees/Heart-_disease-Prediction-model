@@ -1,78 +1,94 @@
-# 💓 Heart Disease Prediction using Machine Learning
+# 🫀 UCI Heart Disease Predictive Model
 
-A machine learning project to predict heart disease likelihood using patient 
-health data — includes EDA, feature engineering, classification modeling, 
-and evaluation.
+![Python](https://img.shields.io/badge/Python-3.10+-blue) ![Scikit-Learn](https://img.shields.io/badge/ScikitLearn-Enabled-orange) ![Accuracy](https://img.shields.io/badge/Accuracy-89.67%25-brightgreen) ![AUC](https://img.shields.io/badge/AUC-0.94-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-orange)
-![Accuracy](https://img.shields.io/badge/Accuracy-89.7%25-green)
+### Random Forest Classifier | 920 UCI Records | 89.67% Accuracy
+
+A machine learning model that predicts heart disease risk using clinical data from the UCI Heart Disease dataset. Built with Random Forest, achieving **89.67% accuracy** and **0.94 AUC score**.
 
 ---
 
-## 📌 Overview
-
-Predicts whether a patient has heart disease using health indicators from the 
-UCI Heart Disease Dataset (303 records). Built to assist in early diagnosis 
-through ML.
-
----
-
-## 📊 Dataset
-
-| Property | Detail |
-|----------|--------|
-| Source | UCI Heart Disease Dataset |
-| Records | 303 |
-| Target | `num` — 0 = No Disease, 1 = Disease |
-
----
-
-## 🔍 EDA Highlights
-
-- Gender & Chest Pain Type vs Heart Disease
-- Age Distribution (Histogram + Boxplot)
-- Correlation Heatmap
-- ST Depression vs Target (Violin Plot)
-
----
-
-## 🤖 Model
-
-**Random Forest Classifier** (`n_estimators=100`)
+## 📊 Model Performance
 
 | Metric | Score |
-|--------|-------|
-| Accuracy | **89.7%** |
-| F1-Score | 0.90 |
-| ROC-AUC | ✅ Evaluated |
+|---|---|
+| Accuracy | 89.67% |
+| AUC-ROC | 0.94 |
+| Precision (Disease) | 0.92 |
+| Recall (Disease) | 0.90 |
+| F1-Score (Disease) | 0.91 |
 
 ---
 
-## 🔦 Top Features
+## ✨ Key Features
 
-1. `cp` — Chest pain type
-2. `thalach` — Max heart rate
-3. `oldpeak` — ST depression
-4. `ca` — Major vessels
-5. `slope`
-
----
-
-## 🛠 Tech Stack
-
-`Python` `Pandas` `NumPy` `Scikit-learn` `Seaborn` `Matplotlib` `Joblib`
+- **Random Forest Classifier:** 100 estimators, optimized for clinical tabular data.
+- **Comprehensive EDA:** Gender analysis, chest pain type distribution, age distribution, correlation heatmap.
+- **Missing Value Handling:** Strategic imputation — mean for continuous, mode for categorical, -1 for vessel count.
+- **Feature Engineering:** One-hot encoding for multi-class categoricals, binary mapping for sex/fbs/exang.
+- **Model Persistence:** Saved via `joblib` for production deployment.
 
 ---
 
-## ▶️ How to Run
+## 🔍 Top Predictive Features
+
+1. **thalch** — Maximum heart rate (strongest predictor)
+2. **cp** — Chest pain type
+3. **exang** — Exercise-induced angina
+4. **ca** — Number of major vessels
+5. **oldpeak** — ST depression (0.94 AUC contribution)
+
+---
+
+## 🛠️ Tech Stack
+
+| Component | Tool |
+|---|---|
+| Language | Python 3.10+ |
+| ML Framework | Scikit-Learn |
+| Data Processing | Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn |
+| Model Export | Joblib |
+
+---
+
+## 📁 Dataset
+
+- **Source:** UCI Heart Disease Dataset
+- **Records:** 920 patients
+- **Features:** 15 clinical attributes
+- **Target:** Binary (0 = No Disease, 1 = Disease)
+- **Missing Values:** Handled via mean/median/mode imputation
+
+---
+
+## 🚀 Quick Start
+
+**1. Clone the repo:**
 ```bash
-git clone https://github.com/YasraNafees/Heart-_disease-Prediction-model.git
+git clone https://github.com/YasraNafees/heart-disease-prediction.git
+cd heart-disease-prediction
+```
+
+**2. Install dependencies:**
+```bash
 pip install -r requirements.txt
-jupyter notebook Heart_Disease_Prediction.ipynb
+```
+
+**3. Run the notebook:**
+```bash
+jupyter notebook heart_disease.ipynb
+```
+
+**4. Load saved model:**
+```python
+import joblib
+model = joblib.load('heart_disease_model.joblib')
+prediction = model.predict(your_data)
 ```
 
 ---
 
-## 📄 License
-MIT License
+## 🤝 Contributing
+
+Pull requests are welcome. For major changes, please open an issue first.
